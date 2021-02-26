@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import React from "react";
 
 function App() {
+  const [number, setNumber] = React.useState(0);
+  let plusNumber = () => setNumber(number + 1);
+  let resetNumber = () => setNumber(0);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>{number}</h1>
+      <button onClick={plusNumber}> Нажми себе на жопу, долбоеб</button>
+      <div>
+        <button onClick={resetNumber}> Очисти</button>
+      </div>
     </div>
   );
 }
