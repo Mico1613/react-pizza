@@ -1,0 +1,24 @@
+@import '../../../Usefull/reset.scss';
+@import "../../../Usefull/adaptiveFont.scss";
+@font-face {
+	font-family: 'Nova';
+	src: url('fonts/ofont.ru_Proxima Nova.eot');
+	src: local('☺'), url('fonts/ofont.ru_Proxima Nova.woff') format('woff'), url('fonts/ofont.ru_Proxima Nova.ttf') format('truetype'), url('fonts/ofont.ru_Proxima Nova.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+};
+@font-face {
+	font-family: 'Nova';
+	src: url('fonts/ofont.ru_Proxima Nova Bold.eot');
+	src: local('☺'), url('fonts/ofont.ru_Proxima Nova Bold.woff') format('woff'), url('fonts/ofont.ru_Proxima Nova Bold.ttf') format('truetype'), url('fonts/ofont.ru_Proxima Nova Bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+};
+@font-face {
+	font-family: 'Nova';
+	src: url('fonts/ofont.ru_Proxima Nova Extra Bold.eot');
+	src: local('☺'), url('fonts/ofont.ru_Proxima Nova Extra Bold.woff') format('woff'), url('fonts/ofont.ru_Proxima Nova Extra Bold.ttf') format('truetype'), url('fonts/ofont.ru_Proxima Nova Extra Bold.svg') format('svg');
+	font-weight: 800;
+	font-style: normal;
+}
+

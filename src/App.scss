@@ -1,0 +1,13 @@
+body{
+  font-family: Nova;
+}
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 50px;
+  background-color: #ffdf8c;
+  &--content {
+    border-radius: 10px;
+    background-color: #fff;
+  }
+}
