@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-pizza/static/css/main.e4757b07.chunk.css",
+    "main.css": "/react-pizza/static/css/main.14a4992e.chunk.css",
     "main.js": "/react-pizza/static/js/main.583cbe55.chunk.js",
     "main.js.map": "/react-pizza/static/js/main.583cbe55.chunk.js.map",
     "runtime-main.js": "/react-pizza/static/js/runtime-main.70fdfcdb.js",
@@ -8,7 +8,7 @@
     "static/js/2.3471d19b.chunk.js": "/react-pizza/static/js/2.3471d19b.chunk.js",
     "static/js/2.3471d19b.chunk.js.map": "/react-pizza/static/js/2.3471d19b.chunk.js.map",
     "index.html": "/react-pizza/index.html",
-    "static/css/main.e4757b07.chunk.css.map": "/react-pizza/static/css/main.e4757b07.chunk.css.map",
+    "static/css/main.14a4992e.chunk.css.map": "/react-pizza/static/css/main.14a4992e.chunk.css.map",
     "static/js/2.3471d19b.chunk.js.LICENSE.txt": "/react-pizza/static/js/2.3471d19b.chunk.js.LICENSE.txt",
     "static/media/amount_icon.d05720f2.svg": "/react-pizza/static/media/amount_icon.d05720f2.svg",
     "static/media/index.scss": "/react-pizza/static/media/ofont.ru_Proxima Nova.c5a81c34.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.70fdfcdb.js",
     "static/js/2.3471d19b.chunk.js",
-    "static/css/main.e4757b07.chunk.css",
+    "static/css/main.14a4992e.chunk.css",
     "static/js/main.583cbe55.chunk.js"
   ]
 }
