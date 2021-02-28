@@ -7,7 +7,7 @@ function App() {
     <div>
       <div className="wrapper">
         <div className="wrapper--content">
-          <Header/>
+          <Header />
         </div>
       </div>
     </div>

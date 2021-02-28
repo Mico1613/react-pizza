@@ -1,4 +1,4 @@
-body{
+body {
   font-family: Nova;
 }
 .wrapper {
@@ -6,6 +6,9 @@ body{
   overflow: hidden;
   padding: 50px;
   background-color: #ffdf8c;
+  @media (max-width: 768px) {
+    padding: 25px;
+  }
   &--content {
     border-radius: 10px;
     background-color: #fff;
