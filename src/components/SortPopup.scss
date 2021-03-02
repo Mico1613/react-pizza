@@ -1,0 +1,37 @@
+.sortPopup{
+    padding-top: 15px;
+    margin-right: 50px;
+    position: relative;
+    span{
+        color: #FE5F1E;
+        border-bottom: 1px dashed #FE5F1E;
+        cursor: pointer;
+        user-select: none;
+        &:active{
+            background-color: #fe5d1e17;
+        }
+    }
+}
+.popupList{
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    display: block;
+    
+    li{
+        padding: 10px 20px 10px 15px;
+        user-select: none;
+        cursor: pointer;
+        &:hover{
+            background-color: rgba(254, 95, 30, 0.05);
+            color: #FE5F1E;
+        }
+        &:active{
+            background-color: #fe5d1e17;
+        }
+    }
+}
+.none{
+    display: none;
+}

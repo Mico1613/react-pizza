@@ -5,7 +5,7 @@ import amountIcon from "../assets/amount_icon.svg";
 
 const Header = ({ price, amount }) => {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header--logo">
         <img src={icon} alt="" />
         <div className="text">
@@ -21,7 +21,7 @@ const Header = ({ price, amount }) => {
           <p>3</p>
         </div>
       </button>
-    </div>
+    </header>
   );
 };
 
