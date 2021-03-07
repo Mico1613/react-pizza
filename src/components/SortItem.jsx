@@ -4,9 +4,6 @@ import "./SortItem.scss";
 
 function SortItem() {
   const [itemSelect, setSelect] = React.useState(0);
-  const changeSelect = (i) => {
-    setSelect(i);
-  };
   const itemArray = [
     "Все",
     "Мясные",
@@ -20,7 +17,7 @@ function SortItem() {
       {itemArray.map((item, index) => (
         <button
           key={`${index}_${item}`}
-          onClick={() => changeSelect(index)}
+          onClick={() => setSelect(index)}
           className={classNames("sortItem", {
             active: itemSelect === index,
           })}

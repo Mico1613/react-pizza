@@ -10,7 +10,7 @@ function Sort() {
         <div className="sortItems">
           <SortItem />
         </div>
-        <SortPopup />
+        <SortPopup items={['популярности', 'цене', 'алфавиту']} />
       </div>
     </div>
   );
