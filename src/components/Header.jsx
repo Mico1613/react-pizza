@@ -14,7 +14,7 @@ const Header = ({ price, amount }) => {
         </div>
       </div>
       <button className="header--button">
-              <div className="price">520{price} ₽</div>
+              <div className="price">520 ₽</div>
               <div className="line"></div>
         <div className="amount">
           <img src={amountIcon} alt="" />
