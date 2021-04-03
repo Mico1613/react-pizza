@@ -1,16 +1,18 @@
 body {
   font-family: Nova;
+  background-color: #ffdf8c;
 }
 .wrapper {
   width: 100%;
   overflow: hidden;
   padding: 50px;
-  background-color: #ffdf8c;
   @media (max-width: 768px) {
     padding: 25px;
   }
   &--content {
+    min-height: calc(100vh - 100px);
     border-radius: 10px;
     background-color: #fff;
+    
   }
 }

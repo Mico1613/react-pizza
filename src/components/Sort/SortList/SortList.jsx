@@ -1,23 +1,19 @@
 import React from "react";
 import classNames from "classnames";
-import "./SortItem.scss";
+import "./SortList.scss";
 
-function SortItem() {
+const SortList = React.memo(({itemsArray, onClickItem}) => {
   const [itemSelect, setSelect] = React.useState(0);
-  const itemArray = [
-    "Все",
-    "Мясные",
-    "Вегетарианские",
-    "Гриль",
-    "Острые",
-    "Закрытые",
-  ];
+  const onSelectItem = (index) => {
+    setSelect(index)
+    onClickItem(index)
+  }
   return (
     <>
-      {itemArray.map((item, index) => (
+      {itemsArray.map((item, index) => (
         <button
           key={`${index}_${item}`}
-          onClick={() => setSelect(index)}
+          onClick={() => onSelectItem(index)}
           className={classNames("sortItem", {
             active: itemSelect === index,
           })}
@@ -27,6 +23,6 @@ function SortItem() {
       ))}
     </>
   );
-}
+})
 
-export default SortItem;
+export default SortList;

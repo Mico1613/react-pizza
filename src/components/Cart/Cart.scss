@@ -1,0 +1,44 @@
+.cart {
+  min-height: 690px;
+  height: calc(100vh - 246px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__wrapper {
+      text-align: center;
+    h4 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 39px;
+      letter-spacing: 0.01em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 145.4%;
+      text-align: center;
+      letter-spacing: 0.01em;
+      margin-bottom: 47px;
+    }
+    img{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 74px;
+    }
+    button {
+      background-color: #282828;
+      border-radius: 30px;
+      padding: 0 40px;
+      span{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 3;
+        text-align: center;
+        letter-spacing: 0.015em;
+        color: #FFFFFF;
+      }
+    }
+  }
+}

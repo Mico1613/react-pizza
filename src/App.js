@@ -1,31 +1,40 @@
 import "./App.scss";
 import React from "react";
-import Header from "./components/Header";
-import Sort from "./components/Sort";
-import PizzaBlock from "./components/PizzaBlock";
 import { Route } from "react-router-dom";
+import axios from "axios";
 
-function App() {
-  const [pizzas, setPizzas] = React.useState([]);
+import Header from "./components/Header/Header";
+import SortMenu from "./components/Sort/SortMenu";
+import PizzaBlock from "./components/PizzaBlock/PizzaBlock";
+import Cart from "./components/Cart/Cart.jsx";
 
+import { setPizzas } from "./redux/actions/pizzas";
+import {useDispatch } from "react-redux";
+
+function App({}) {
+  const dispatch = useDispatch();
   React.useEffect(() => {
-    fetch("http://localhost:3000/react-pizza/db.json")
-      .then((resp) => resp.json())
-      .then((json) => setPizzas(json.pizzas));
+    axios
+      .get("http://localhost:3001/pizzas")
+      .then(({ data }) => dispatch(setPizzas(data)));
   }, []);
+  
   return (
     <div>
       <div className="wrapper">
         <div className="wrapper--content">
           <Header />
           <Route exact path="/react-pizza">
-            <Sort />
-            <PizzaBlock obj={pizzas} />
+            <SortMenu />
+            <PizzaBlock/>
+          </Route>
+          <Route exact path="/cart">
+            <Cart />
           </Route>
         </div>
       </div>
     </div>
   );
 }
-
 export default App;
+

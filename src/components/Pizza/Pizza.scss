@@ -1,0 +1,103 @@
+.pizza {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  img {
+    height: 260px;
+    transform: translateX(7px);
+  }
+  span {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.01em;
+    margin-top: 10px;
+    margin-bottom: 22px;
+  }
+  &__variation {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 7px 6px;
+    display: flex;
+    flex-direction: column;
+    ul {
+      display: flex;
+      margin-bottom: 7px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      li {
+        flex: 1 1;
+        margin-right: 5px;
+        margin-bottom: 0px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #2c2c2c;
+        padding: 7px 0;
+        border-radius: 5px;
+        cursor: pointer;
+        user-select: none;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &__purchase {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    .price {
+      font-family: Nova;
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: 1.5%;
+      font-weight: 700;
+      color: #000;
+      margin-top: 7px;
+    }
+    .add {
+      border-radius: 30px;
+      color: #eb5a1e;
+      border: 1px solid #eb5a1e;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.2;
+      padding: 8px 18px;
+      transition: font-size 0.3s;
+      &:hover {
+        background-color: #eb5a1e;
+        color: #fff;
+        font-size: 18px;
+        padding-left: 9px;
+        padding-right: 27px;
+      }
+      &:active {
+        background-color: #d8531a;
+        padding-left: 30px;
+        img {
+          display: none;
+        }
+      }
+      img {
+        height: 12px;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-top: -1px;
+        transform: translateX(-1px);
+      }
+    }
+  }
+  .disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    background-color: transparent;
+  }
+  .choosen {
+    background-color: #fff;
+  }
+}

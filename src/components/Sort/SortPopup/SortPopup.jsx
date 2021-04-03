@@ -1,44 +1,48 @@
 import React from "react";
 import "./SortPopup.scss";
-import classNames from 'classnames'
+import classNames from "classnames";
 
-function SortPopup({items}) {
+const SortPopup = React.memo(({ items }) => {
   const [popupStatus, popupState] = React.useState(false);
   const changePopupStatus = () => {
     popupState(!popupStatus);
   };
 
-  const refPopup = React.useRef()
+  const refPopup = React.useRef();
   const popupHideClick = (e) => {
     if (!e.path.includes(refPopup.current)) {
-      popupState(false)
+      popupState(false);
     }
-  }
+  };
   React.useEffect(() => {
-    document.addEventListener('click', popupHideClick)
-  }, [])
+    document.addEventListener("click", popupHideClick);
+  }, []);
 
-  const [popupActive, setPopup] = React.useState(0)
-  const visibleLabel = items[popupActive]
+  const [popupActive, setPopup] = React.useState(0);
+  const visibleLabel = items[popupActive].name;
   return (
     <div className="sortPopup">
       <p>
-        Сортировать по: <span onClick={changePopupStatus} ref={refPopup}>{visibleLabel}</span>
+        Сортировать по:{" "}
+        <span onClick={changePopupStatus} ref={refPopup}>
+          {visibleLabel}
+        </span>
       </p>
       <ul className={popupStatus == true ? "popupList" : "none"}>
-        {items.map((item, index) => (
+        {items.map((obj, index) => (
           <li
-            key={`${index}_${item}`}
+            key={`${index}_${obj.type}`}
             onClick={() => setPopup(index)}
             className={classNames("", {
               activePopup: popupActive === index,
             })}
           >
-            {item}
-          </li>))}
+            {obj.name}
+          </li>
+        ))}
       </ul>
     </div>
   );
-}
+})
 
 export default SortPopup;
