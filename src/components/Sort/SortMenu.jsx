@@ -2,7 +2,7 @@ import React from "react";
 import SortList from "./SortList/SortList";
 import "./SortMenu.scss";
 import SortPopup from "./SortPopup/SortPopup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCategory } from '../../redux/actions/filters'
 
 const categoriesArr = [
@@ -21,7 +21,7 @@ const sortItemsArr = [
 
 function SortMenu() {
   const dispatch = useDispatch()
-
+  const { category, sortBy } = useSelector(({filters}) => filters)
   const onSelectCategory = index => {
     dispatch(setCategory(index))
   }
@@ -31,11 +31,13 @@ function SortMenu() {
         <div className="sortItems">
           <SortList
             itemsArray={categoriesArr}
-            onClickItem={onSelectCategory}
+            onClickCategory={onSelectCategory}
+            activeCategory={category}
           />
         </div>
         <SortPopup
           items={sortItemsArr}
+          activeSortType={sortBy}
         />
       </div>
     </div>

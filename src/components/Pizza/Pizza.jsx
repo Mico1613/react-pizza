@@ -3,7 +3,9 @@ import "./Pizza.scss";
 import plus from "../../assets/plus.png";
 import classNames from "classnames";
 
+
 function Pizza({ pizza }) {
+
   const [pizzaType, setPizzaType] = React.useState(pizza.types[0]);
   const selectPizzaType = (index) => {
     setPizzaType(index);
@@ -52,7 +54,7 @@ function Pizza({ pizza }) {
         </ul>
       </div>
       <div className="pizza__purchase">
-        <div className="price">от {pizza.price} ₽</div>
+        <div className="price">от {pizza.цене} ₽</div>
         <button className="add">
           <img src={plus} alt="" /> Добавить
         </button>

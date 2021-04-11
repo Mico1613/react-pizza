@@ -1,16 +1,19 @@
 import React from "react";
 import "./SortPopup.scss";
 import classNames from "classnames";
+import { useDispatch } from "react-redux";
+import { setSortBy } from "../../../redux/actions/filters";
 
-const SortPopup = React.memo(({ items }) => {
+const SortPopup = React.memo(({ items, activeSortType }) => {
   const [popupStatus, popupState] = React.useState(false);
   const changePopupStatus = () => {
     popupState(!popupStatus);
   };
 
   const refPopup = React.useRef();
-  const popupHideClick = (e) => {
-    if (!e.path.includes(refPopup.current)) {
+  const popupHideClick = (event) => {
+    const path = event.path || (event.composedPath && event.composedPath());
+    if (!path.includes(refPopup.current)) {
       popupState(false);
     }
   };
@@ -18,23 +21,27 @@ const SortPopup = React.memo(({ items }) => {
     document.addEventListener("click", popupHideClick);
   }, []);
 
-  const [popupActive, setPopup] = React.useState(0);
-  const visibleLabel = items[popupActive].name;
+  const dispatch = useDispatch();
+  const visibleLabel = (index) => items[index].name;
+  const onChangeSort = (index) => {
+    dispatch(setSortBy(visibleLabel(index)));
+  }
+  
   return (
     <div className="sortPopup">
       <p>
         Сортировать по:{" "}
         <span onClick={changePopupStatus} ref={refPopup}>
-          {visibleLabel}
+          {activeSortType}
         </span>
       </p>
       <ul className={popupStatus == true ? "popupList" : "none"}>
         {items.map((obj, index) => (
           <li
             key={`${index}_${obj.type}`}
-            onClick={() => setPopup(index)}
+            onClick={() => onChangeSort(index)}
             className={classNames("", {
-              activePopup: popupActive === index,
+              activePopup: activeSortType === visibleLabel(index),
             })}
           >
             {obj.name}
@@ -43,6 +50,6 @@ const SortPopup = React.memo(({ items }) => {
       </ul>
     </div>
   );
-})
+});
 
 export default SortPopup;

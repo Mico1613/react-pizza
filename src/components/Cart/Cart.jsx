@@ -6,7 +6,7 @@ import CartImg from "../../assets/cart_img.png";
 function Cart() {
   return (
     <div className="cart">
-      <div className="cart__wrapper">
+      <div className="cart__empty">
         <h4>Корзина пустая 😕</h4>
         <p>
           Вероятно, вы ещё не заказывали пиццу. Для того, чтобы заказать пиццу,

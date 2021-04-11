@@ -1,6 +1,8 @@
+React-router-dom;
 Redux;
 React-Redux;
-React-router-dom;
+Redux-thunk;
 Axios;
+React-content-loader;
 ClassNames;
 Sass;
