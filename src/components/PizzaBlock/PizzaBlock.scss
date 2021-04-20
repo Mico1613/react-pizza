@@ -15,5 +15,10 @@
         justify-content: flex-start;
         flex-wrap: wrap;
         gap: 50px;
+        padding-left: 45px;
+        @media(max-width: 1024px){
+            justify-content: space-between;
+            padding-left: 0;
+        }
     }
 }

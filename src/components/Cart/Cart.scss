@@ -2,9 +2,252 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 236px);
+  &__filled {
+    width: 827px;
+    margin: 70px 0;
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      .logo {
+        img {
+          width: 29px;
+          margin-right: 17px;
+          position: relative;
+          top: 2px;
+        }
+        h3 {
+          display: inline-block;
+          font-family: Nova;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 32px;
+          line-height: 39px;
+          letter-spacing: 0.01em;
+        }
+      }
+      .clear {
+        align-self: center;
+        cursor: pointer;
+        user-select: none;
+        border-radius: 10px;
+        padding: 3px;
+        &:active {
+          background-color: rgb(250, 250, 250);
+        }
+        img {
+          width: 20px;
+          margin-right: 7px;
+          position: relative;
+          bottom: 2px;
+        }
+        span {
+          font-family: Nova;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 19px;
+          color: #b6b6b6;
+        }
+      }
+    }
+    .cart-block {
+      border-top: 1px solid #f4f4f4;
+      padding: 20px 0;
+      display: flex;
+      img {
+        margin-right: 15px;
+      }
+      .pizza-kind {
+        width: 280px;
+        align-self: center;
+        margin-right: 68px;
+        .pizza-name {
+          font-family: Nova;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 25px;
+          line-height: 27px;
+          letter-spacing: 0.01em;
+        }
+        p {
+          font-family: Nova;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 22px;
+          letter-spacing: 0.01em;
+          color: #8d8d8d;
+        }
+      }
+      .pizza-counter {
+        margin-right: 93px;
+        display: flex;
+        .cart-change {
+          border: 2px solid #fe5f1e;
+          border-radius: 50%;
+          height: 32px;
+          padding: 16px 12px;
+          cursor: pointer;
+          user-select: none;
+          .horizontal-line {
+            width: 10px;
+            height: 2px;
+            background-color: #fe5f1e;
+          }
+          .vertical-line {
+            transform: rotate(90deg);
+            position: relative;
+            bottom: 2px;
+            width: 10px;
+            height: 2px;
+            background-color: #fe5f1e;
+          }
+          &:hover {
+            background-color: #fe5f1e;
+            .horizontal-line {
+              background-color: #fff;
+            }
+            .vertical-line {
+              background-color: #fff;
+            }
+          }
+          &:active {
+            background-color: #ec5c23;
+            border-color: #ec5c23;
+          }
+        }
+        align-self: center;
+        p {
+          align-self: center;
+          margin: 0 12px;
+          font-family: Nova;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 22px;
+          line-height: 27px;
+          letter-spacing: 0.01em;
+        }
+      }
+      .pizza-price {
+        align-self: center;
+        width: 135px;
+        font-family: Nova;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 27px;
+        letter-spacing: 0.01em;
+      }
+      .pizza-delete {
+        align-self: center;
+        border: 2px solid #d7d7d7;
+        border-radius: 50%;
+        height: 32px;
+        padding: 16px 12px;
+        cursor: pointer;
+        user-select: none;
+        &:hover {
+          background-color: #bebebe;
+          border-color: #bebebe;
+          .cross-line {
+            background-color: #fff;
+          }
+        }
+        &:active {
+          background-color: #b4b4b4;
+        }
+        .cross-line {
+          width: 10px;
+          height: 2px;
+          background-color: #d7d7d7;
+        }
+        .first-line {
+          transform: rotate(-45deg);
+        }
+        .second-line {
+          transform: rotate(45deg);
+          position: relative;
+          bottom: 2px;
+        }
+      }
+    }
+    .result {
+      display: flex;
+      justify-content: space-between;
+      margin: 40px 0;
+      .quantity {
+        font-family: Nova;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 27px;
+        letter-spacing: 0.01em;
+        p {
+          font-weight: bold;
+          display: inline-block;
+        }
+      }
+      .sum {
+        font-family: Nova;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 27px;
+        letter-spacing: 0.01em;
+        p {
+          display: inline-block;
+          font-weight: bold;
+          color: #fe5f1e;
+        }
+      }
+    }
+    .cart-buttons {
+      display: flex;
+      justify-content: space-between;
+      .on-main {
+        background-color: #fff;
+        border: 2px solid rgba(0, 0, 0, 0.411);
+        border-radius: 30px;
+        padding: 15px 40px;
+        color: rgba(0, 0, 0, 0.411);
+        font-size: 16px;
+        font-family: Nova;
+        font-weight: 700;
+        line-height: 19px;
+        text-align: center;
+        &:hover {
+          background-color: #282828;
+          color: #fff;
+        }
+        &:active {
+          background-color: #303030;
+        }
+      }
+      .to-pay {
+        border-radius: 30px;
+        color: #eb5a1e;
+        border: 2px solid #eb5a1e;
+        padding: 15px 40px;
+        transition: font-size 0.3s;
+        font-family: Nova;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        &:hover {
+          background-color: #eb5a1e;
+          color: #fff;
+        }
+        &:active {
+          background-color: #d8531a;
+        }
+      }
+    }
+  }
+
   &__empty {
-    margin: 98px 0;
+    margin: 95px 0;
     text-align: center;
     h4 {
       font-style: normal;
@@ -28,16 +271,27 @@
       margin-bottom: 74px;
     }
     button {
-      background-color: #282828;
+      background-color: #fff;
+      border: 2px solid rgba(0, 0, 0, 0.411);
       border-radius: 30px;
+      text-align: center;
       padding: 0 40px;
+      &:hover {
+        background-color: #282828;
+        span {
+          color: #fff;
+        }
+      }
+      &:active {
+        background-color: #303030;
+      }
       span {
-        font-weight: 400;
+        font-weight: 700;
         font-size: 18px;
         line-height: 3;
         text-align: center;
         letter-spacing: 0.015em;
-        color: #ffffff;
+        color: rgba(0, 0, 0, 0.411);
       }
     }
   }

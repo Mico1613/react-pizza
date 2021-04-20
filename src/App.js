@@ -5,9 +5,12 @@ import { Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import SortMenu from "./components/Sort/SortMenu";
 import PizzaBlock from "./components/PizzaBlock/PizzaBlock";
-import Cart from "./components/Cart/Cart.jsx";
+import CartEmpty from "./components/Cart/CartEmpty.jsx";
+import CartFilled from "./components/Cart/CartFilled.jsx";
+import { useSelector } from "react-redux";
 
 function App() {
+  const items = useSelector(({ cart }) => cart.items);
   return (
     <div>
       <div className="wrapper">
@@ -18,7 +21,7 @@ function App() {
             <PizzaBlock />
           </Route>
           <Route exact path="/cart">
-            <Cart />
+            {Object.keys(items)[0] ? <CartFilled /> : <CartEmpty />}
           </Route>
         </div>
       </div>

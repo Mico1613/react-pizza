@@ -62,26 +62,41 @@
     }
     .add {
       border-radius: 30px;
-      color: #eb5a1e;
       border: 1px solid #eb5a1e;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 1.2;
-      padding: 8px 18px;
-      transition: font-size 0.3s;
-      &:hover {
-        background-color: #eb5a1e;
+      padding: 8px 10px 8px 15px;
+      p {
+        display: inline-block;
+        color: #eb5a1e;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.2;
+        margin: 0;
+      }
+      span {
+        font-size: 14px;
         color: #fff;
-        font-size: 18px;
-        padding-left: 9px;
-        padding-right: 27px;
+        background-color: #eb5a1e;
+        border-radius: 50%;
+        padding: 3px 7px;
+        margin-left: 5px;
+      }
+      &:hover {
+        p {
+          color: #fff;
+          transform: translateX(-5px);
+        }
+        padding: 8px 15px 8px 10px;
+        background-color: #eb5a1e;
+        img {
+          visibility: hidden;
+        }
+        span {
+          background-color: #fff;
+          color: #eb5a1e;
+        }
       }
       &:active {
         background-color: #d8531a;
-        padding-left: 30px;
-        img {
-          display: none;
-        }
       }
       img {
         height: 12px;

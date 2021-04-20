@@ -3,20 +3,31 @@ import "./Pizza.scss";
 import plus from "../../assets/plus.png";
 import classNames from "classnames";
 
-
-function Pizza({ pizza }) {
-
+function Pizza({ pizza, handleAddPizza, addedPizzasAmount }) {
+  const pizzaTypes = ["тонкое", "традиционное"];
+  const pizzaSizes = ["26", "30", "40"];
   const [pizzaType, setPizzaType] = React.useState(pizza.types[0]);
   const selectPizzaType = (index) => {
     setPizzaType(index);
   };
-  const [pizzaSize, setPizzaSize] = React.useState(0);
+  const [pizzaSize, setPizzaSize] = React.useState(
+    pizza.sizes[0] === 26 ? 0 : 1
+  );
   const selectPizzaSize = (index) => {
     setPizzaSize(index);
   };
-  const pizzaTypes = ["тонкое", "традиционное"];
-  const pizzaSizes = ["26", "30", "40"];
-  
+  const obj = {
+    id: pizza.id,
+    name: pizza.name,
+    imageUrl: pizza.imageUrl,
+    price: pizza.цене,
+    size: +pizzaSizes[pizzaSize],
+    type: pizzaTypes[pizzaType],
+  };
+  const onAddPizza = () => {
+    handleAddPizza(obj);
+  };
+
   return (
     <div className="pizza">
       <div className="pizza__img">
@@ -55,8 +66,9 @@ function Pizza({ pizza }) {
       </div>
       <div className="pizza__purchase">
         <div className="price">от {pizza.цене} ₽</div>
-        <button className="add">
-          <img src={plus} alt="" /> Добавить
+        <button onClick={onAddPizza} className="add">
+          <img src={plus} alt="" /> <p>Добавить</p>{" "}
+          {addedPizzasAmount ? <span>{addedPizzasAmount}</span> : null}
         </button>
       </div>
     </div>

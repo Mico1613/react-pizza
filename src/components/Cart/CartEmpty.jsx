@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Cart.scss";
-import CartImg from "../../assets/cart_img.png";
+import CartImg from "../../assets/cart/cart_img.png";
 
 function Cart() {
   return (
